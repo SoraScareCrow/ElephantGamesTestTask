@@ -10,18 +10,36 @@ public class PlayAnimAndSoundOnClick : MonoBehaviour
 
     [Header("Звук")]
     public AudioSource audioSource; 
-    public AudioClip audioClip;     
-    
+    public AudioClip audioClip;
+
+    [Header("Визуальный эффект")]
+    public GameObject attackEffectPrefab;        // Префаб эффекта (вспышка, частицы и т.д.)
+    public Transform effectSpawnPoint;           // Точка появления эффекта
+    public float effectDestroyDelay = 2f;        // Через сколько секунд уничтожить эффект
+    public float effectDelay = 0.5f;              // Задержка перед эффектом
+
     void OnMouseDown()
     {
         Debug.Log("Есть!");
 
         // Запускаем анимацию
-        animator.Play(animationStateName);
+        if (animator != null && !string.IsNullOrEmpty(animationStateName))
+            animator.Play(animationStateName);
 
         // Проигрываем звук
-        // PlayOneShot не прерывает аудио, если оно уже идёт, а накладывает поверх
-        // Если хотите стопроцентно один звук без наложений — используйте audioSource.Stop() перед Play().
-        audioSource.PlayOneShot(audioClip);
+        if (audioSource != null && audioClip != null)
+            audioSource.PlayOneShot(audioClip);
+
+        // Запускаем задержку перед эффектом
+        if (attackEffectPrefab != null && effectSpawnPoint != null)
+            StartCoroutine(SpawnEffectWithDelay());
+    }
+
+    IEnumerator SpawnEffectWithDelay()
+    {
+        yield return new WaitForSeconds(effectDelay);
+
+        GameObject effect = Instantiate(attackEffectPrefab, effectSpawnPoint.position, Quaternion.identity);
+        Destroy(effect, effectDestroyDelay);
     }
 }
