@@ -13,24 +13,24 @@ public class PlayAnimAndSoundOnClick : MonoBehaviour
     public AudioClip audioClip;
 
     [Header("Визуальный эффект")]
-    public GameObject attackEffectPrefab;        // Префаб эффекта (вспышка, частицы и т.д.)
-    public Transform effectSpawnPoint;           // Точка появления эффекта
-    public float effectDestroyDelay = 2f;        // Через сколько секунд уничтожить эффект
-    public float effectDelay = 0.5f;              // Задержка перед эффектом
+    public GameObject attackEffectPrefab;        
+    public Transform effectSpawnPoint;           
+    public float effectDestroyDelay = 2f;       
+    public float effectDelay = 0.5f;            
 
     void OnMouseDown()
     {
         Debug.Log("Есть!");
 
-        // Запускаем анимацию
+     
         if (animator != null && !string.IsNullOrEmpty(animationStateName))
             animator.Play(animationStateName);
 
-        // Проигрываем звук
+   
         if (audioSource != null && audioClip != null)
             audioSource.PlayOneShot(audioClip);
 
-        // Запускаем задержку перед эффектом
+     
         if (attackEffectPrefab != null && effectSpawnPoint != null)
             StartCoroutine(SpawnEffectWithDelay());
     }

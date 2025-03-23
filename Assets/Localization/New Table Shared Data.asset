@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: New Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: New Table
+  m_TableCollectionNameGuidString: 1a5cc91697af2164191797c579f4993c
+  m_Entries:
+  - m_Id: 513112498176
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 797712801792
+    m_Key: scene1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1084120850432
+    m_Key: press _on_me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1222679683072
+    m_Key: main_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31688367497216
+    m_Key: scene2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31875928383488
+    m_Key: back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34719632941056
+    m_Key: lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34786632753152
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1234063788754337872
+  references:
+    version: 2
+    RefIds:
+    - rid: 1234063788754337872
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1742706949076

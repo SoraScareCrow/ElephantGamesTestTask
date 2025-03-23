@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public string sceneName; // Название сцены для загрузки
+    public string sceneName;
 
     public void LoadScene()
     {
-        Debug.Log("Пытаемся загрузить сцену: " + sceneName);
+        Debug.Log("Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
 }
